@@ -1,5 +1,4 @@
 import {h, Fragment, useReducer} from 'preact'
-import * as React from 'react'
 
 interface State {
   count: number;

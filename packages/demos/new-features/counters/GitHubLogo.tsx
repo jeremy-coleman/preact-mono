@@ -3,7 +3,7 @@ import {h} from 'preact'
 const GitHubLogo = () => {
   return (
     <a
-      href="https://github.com/skovy/react-hooks-typescript-example"
+      href="https://github.com"
       className="github-corner"
       aria-label="View source on GitHub"
     >

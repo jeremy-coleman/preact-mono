@@ -5,15 +5,9 @@ const CounterTitle = () => {
 
   useEffect(
     () => {
-      // Update the document title to the current count
       document.title = `You clicked ${count} times`;
-
-      // Cleanup the effect so that the document title is properly restored
-      return () => {
-        document.title = "React TypeScript Hooks";
-      };
-    },
-    [count]
+      return () => document.title = "React TypeScript Hooks";
+      },[count]
   );
 
   return (
