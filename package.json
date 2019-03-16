@@ -1,0 +1,34 @@
+{
+  "name": "@preact/workspace",
+  "bin":{
+    "preact-cli":"./packages/sdk/cli/lib/index.js"
+  },
+  "private": true,
+  "workspaces":[
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap":"lerna bootstrap",
+    "start": "cross-env NODE_ENV=development wp --config ./webpack.config",
+    "build": "cross-env NODE_ENV=production wp --config ./webpack.config",
+    "pretest": "yarn lint",
+    "test": "lerna run test",
+    "prettier": "prettier --write **/*.{js,ts,tsx,json,css,scss,md,yml}",
+    "lint": "eslint .",
+    "lintfix":"eslint --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7",
+    "lerna":"3.13.1",
+    "typescript": "3.3.3",
+    "sucrase":"3.10.0",
+    "gulp":"4.0.0",
+    "rollup":"1.6.0",
+    "webpack-nano": "0.6.1",
+    "webpack-plugin-serve": "0.7.3",
+    "jest": "^24.5.0",
+    "prettier": "^1.16.4",
+    "eslint": "5.15.1",
+    "puppeteer": "^1.13.0"
+  }
+}

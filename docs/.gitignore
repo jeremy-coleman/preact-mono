@@ -1,0 +1,11 @@
+.DS_Store
+node_modules
+lighthouse.*/
+package-lock.json
+**/tests/output
+tmp-*.json
+*.log
+*.pem
+
+.idea/
+.vscode

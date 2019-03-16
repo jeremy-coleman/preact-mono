@@ -1,0 +1,21 @@
+{
+	"compilerOptions" : {
+		"outDir": "_never",
+		"declarationDir": "dist/types",
+		"declaration": true,
+		"declarationMap": true,
+		"jsx": "react",
+		"jsxFactory" : "h",
+		"moduleResolution": "node",
+		"allowJs": false,
+		"allowSyntheticDefaultImports": true,
+		"lib": ["dom", "esnext"],
+		"target":"esnext",
+		"module": "esnext",
+		"baseUrl": "./packages",
+		"experimentalDecorators": true,
+		"removeComments": true
+	},
+	"include": ["packages/preact", "empty.js", "build-rollup.js", "jest.config.js", "jest.setup.js"],
+    "exclude": ["node_modules"]
+}

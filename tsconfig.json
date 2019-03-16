@@ -1,0 +1,18 @@
+{
+	"compilerOptions" : {
+		"outDir": "_never",
+		"declaration": false,
+		"jsx": "react",
+		"jsxFactory" : "h",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"lib": ["dom", "esnext"],
+		"target":"esnext",
+		"module": "esnext",
+		"baseUrl": "./packages",
+		"experimentalDecorators": true
+	},
+	"include": ["packages", "empty.js", "build-rollup.js", "jest.config.js", "jest.setup.js"],
+    "exclude": ["node_modules"]
+}
