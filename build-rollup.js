@@ -14,11 +14,13 @@ var emptyModulePath = path.resolve(__dirname, "empty.js")
 function getExternals(target) {
     switch (target) {
         case "browser":
-            return ["react", "mobx", "react-dom"]
+            return ["react", "mobx", "react-dom", "preact", "prop-types"]
         case "native":
             return ["react", "mobx", "react-native"]
         case "custom":
             return ["react", "mobx"]
+        case "offline":
+            return []
     }
 }
 
@@ -94,6 +96,16 @@ const main = async () => {
     await build("browser", "es", "packages/preact/index.ts", "index.js")
     await build("browser", "es", "packages/preact/index_compat.ts", "compat.js")
     await build("browser", "es", "packages/preact/index_hooks.ts", "hooks.js")
+    await build("browser", "es", "packages/preact-mobx-lite/src/index.ts", "preact-mobx.js")
 }
 
-main()
+const mobx = async () => {
+    await build("offline", "es", "packages/preact-mobx-lite/src/index.ts", "preact-mobx.debug.js")
+}
+
+
+const args = process.argv.slice(1);
+args.forEach(arg => console.info(arg));
+args.some(arg => arg === '--all') && main()
+
+args.some(arg => arg === '--mobx') && mobx()
